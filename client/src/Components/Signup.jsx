@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
   TextField,
@@ -16,6 +16,9 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  // Create a navigate function to handle navigation
+  const navigate = useNavigate();
+
   // Function to handle user signup
   const handleSignup = async () => {
     // Send a POST request to the signup endpoint with user credentials
@@ -24,15 +27,15 @@ const Signup = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
-    
+
     // Parse the response data
     const data = await response.json();
 
     // Check if a token is received in the response
     if (data.token) {
-      // Store the token in local storage and redirect to the todos page
+      // Store the token in local storage and navigate to the todos page
       localStorage.setItem("token", data.token);
-      window.location = "/todos";
+      navigate("/todos");
     } else {
       // Display an alert for signup errors
       alert("Error while signing up");
