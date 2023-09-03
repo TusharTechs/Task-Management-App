@@ -17,6 +17,7 @@ import {
   Edit,
   Delete,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 
 // Define the TodoList component
 const TodoList = () => {
@@ -28,6 +29,7 @@ const TodoList = () => {
   const [updatedTitle, setUpdatedTitle] = useState("");
   const [updatedDescription, setUpdatedDescription] = useState("");
   const authStateValue = useRecoilValue(authState);
+  const navigate = useNavigate(); // Initialize the navigate function
 
   // Fetch todos from the server on component mount
   useEffect(() => {
@@ -128,6 +130,12 @@ const TodoList = () => {
     }
   };
 
+  // Function to handle logout
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login"); // Use the navigate function for logout
+  };
+
   // Render the TodoList component
   return (
     <div>
@@ -141,10 +149,7 @@ const TodoList = () => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => {
-              localStorage.removeItem("token");
-              window.location = "/login";
-            }}
+            onClick={handleLogout} // Use handleLogout for logout action
             startIcon={<Logout />}
           >
             Logout
