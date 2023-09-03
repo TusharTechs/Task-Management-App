@@ -51,50 +51,55 @@ Make sure you have the following software installed on your machine:
 1. Clone the repository:
 
 `git clone https://github.com/yourusername/your-task-app.git`
+
 `cd your-task-app`
 
 2. Install server dependencies and start the server:
-cd server
-npm install
-npm start
+
+`cd server`
+
+`npm install`
+
+`npm start`
 
 3. Install client dependencies and start the client:
 
-cd client
-npm install
-npm start
+`cd client`
+
+`npm install`
+
+`npm run dev`
 
 4. Create a MongoDB database and configure the connection string in server/db/dbConnect.js.
 
-5. Create a .env file in the server directory with your JWT secret:
+5. Create a .env file in the server directory with your MongoDB Database URL as:
 
-6. Your application should now be running. Access it at http://localhost:3000.
+`MONGO_URI = your_db_url`
 
-Usage
-Register or log in to access the task management dashboard.
-Create new tasks by providing a title and description.
-Edit or delete tasks as needed.
-Mark tasks as "doing" and "done" to track your progress.
-API Endpoints
+`PORT = your_port`
+
+6. Your application should now be running. Access it at `http://localhost:5173`
+
+### Usage
+
+1. Register or log in to access the task management dashboard.
+
+2. Create new tasks by providing a title and description.
+
+3. Edit or delete tasks as needed.
+  
+4. Mark tasks as "doing" and "done" to track your progress.
+
+### API Endpoints
+
 Here are the main API endpoints used in the application:
 
-POST /api/auth/register: Register a new user.
-POST /api/auth/login: Log in an existing user.
-GET /api/tasks: Get all tasks for the authenticated user.
-POST /api/tasks: Create a new task.
-GET /api/tasks/:id: Get details of a specific task.
-PUT /api/tasks/:id: Update a specific task.
-DELETE /api/tasks/:id: Delete a specific task.
-For detailed documentation, refer to the API documentation.
+`POST /auth/signup:` Register a new user.
+`POST /auth/login:` Log in an existing user.
+`GET /todo/todos:` Get all todos for the authenticated user.
+`POST /todo/todos:` Create a new todo.
+`PATCH /todo/todos/:todoId:` Update a specific todo.
+`DELETE /todo/todos/:todoId:` Delete a specific todo.
 
-Authentication
+### Authentication
 Authentication in this application is handled using JSON Web Tokens (JWT). When a user registers or logs in, they receive a JWT token that is used to authenticate subsequent requests to protected routes. 
-
-Contributing
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-Fork the repository.
-Create a new branch for your feature: git checkout -b feature-name.
-Commit your changes: git commit -m 'Add feature-name'.
-Push to your branch: git push origin feature-name.
-Submit a pull request with a description of your changes.
