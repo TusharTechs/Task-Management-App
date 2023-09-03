@@ -34,7 +34,7 @@ function InitState() {
   const init = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:3000/auth/me", {
+      const response = await fetch("https://task-management-server-1jug.onrender.com/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
