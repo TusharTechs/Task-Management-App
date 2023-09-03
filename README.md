@@ -50,33 +50,33 @@ Make sure you have the following software installed on your machine:
 
 1. Clone the repository:
 
-`git clone https://github.com/yourusername/your-task-app.git`
+  `git clone https://github.com/yourusername/your-task-app.git`
 
-`cd your-task-app`
+  `cd your-task-app`
 
 2. Install server dependencies and start the server:
 
-`cd server`
+  `cd server`
 
-`npm install`
+  `npm install`
 
-`npm start`
+  `npm start`
 
 3. Install client dependencies and start the client:
 
-`cd client`
+  `cd client`
 
-`npm install`
+  `npm install`
 
-`npm run dev`
+  `npm run dev`
 
 4. Create a MongoDB database and configure the connection string in server/db/dbConnect.js.
 
 5. Create a .env file in the server directory with your MongoDB Database URL as:
 
-`MONGO_URI = your_db_url`
+  `MONGO_URI = your_db_url`
 
-`PORT = your_port`
+  `PORT = your_port`
 
 6. Your application should now be running. Access it at `http://localhost:5173`
 
@@ -94,12 +94,29 @@ Make sure you have the following software installed on your machine:
 
 Here are the main API endpoints used in the application:
 
-`POST /auth/signup:` Register a new user.
-`POST /auth/login:` Log in an existing user.
-`GET /todo/todos:` Get all todos for the authenticated user.
-`POST /todo/todos:` Create a new todo.
-`PATCH /todo/todos/:todoId:` Update a specific todo.
-`DELETE /todo/todos/:todoId:` Delete a specific todo.
+  `POST /auth/signup:` Register a new user.
+
+  `POST /auth/login:` Log in an existing user.
+
+  `GET /todo/todos:` Get all todos for the authenticated user.
+
+  `POST /todo/todos:` Create a new todo.
+
+  `PATCH /todo/todos/:todoId:` Update a specific todo.
+
+  `DELETE /todo/todos/:todoId:` Delete a specific todo.
 
 ### Authentication
-Authentication in this application is handled using JSON Web Tokens (JWT). When a user registers or logs in, they receive a JWT token that is used to authenticate subsequent requests to protected routes. 
+Authentication in this application is handled using JSON Web Tokens (JWT). When a user registers or logs in, they receive a JWT token that is used to authenticate subsequent requests to protected routes.
+
+## Contributing
+
+Contributions to this project are welcomed and encouraged. If you encounter any bugs, have suggestions for improvements, or want to add new features, please submit issues or pull requests through GitHub.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Thank you for choosing **Task Management App** for your task management needs. If you have any questions or need further assistance, please don't hesitate to contact us at tusharaggarwal274@gmail.com. We hope you find our application both helpful and user-friendly!
