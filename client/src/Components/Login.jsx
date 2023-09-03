@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
-  Grid,
   TextField,
   Typography,
   Container,
+  Grid,
   Paper,
 } from "@mui/material";
 import { LockOutlined } from "@mui/icons-material";
@@ -16,6 +16,9 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  // Create a navigate function to handle navigation
+  const navigate = useNavigate();
+
   // Function to handle user login
   const handleLogin = async () => {
     // Send a POST request to the authentication endpoint with user credentials
@@ -24,15 +27,15 @@ const Login = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
-    
+
     // Parse the response data
     const data = await response.json();
 
     // Check if a token is received in the response
     if (data.token) {
-      // Store the token in local storage and redirect to the todos page
+      // Store the token in local storage and navigate to the todos page
       localStorage.setItem("token", data.token);
-      window.location = "/todos";
+      navigate("/todos"); // Use navigate to go to the Todos page
     } else {
       // Display an alert for invalid credentials
       alert("Invalid credentials");
