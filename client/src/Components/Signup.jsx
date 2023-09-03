@@ -19,7 +19,7 @@ const Signup = () => {
   // Function to handle user signup
   const handleSignup = async () => {
     // Send a POST request to the signup endpoint with user credentials
-    const response = await fetch("https://task-management-fwa3xv63o-tushartechs.vercel.app/auth/signup", {
+    const response = await fetch("https://task-management-app-beige-pi.vercel.app/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
