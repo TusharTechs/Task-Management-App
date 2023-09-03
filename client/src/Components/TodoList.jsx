@@ -32,7 +32,7 @@ const TodoList = () => {
   // Fetch todos from the server on component mount
   useEffect(() => {
     const getTodos = async () => {
-      const response = await fetch("https://task-management-app-beige-pi.vercel.app/todo/todos", {
+      const response = await fetch("https://task-management-server-1jug.onrender.com/todo/todos", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const data = await response.json();
@@ -43,7 +43,7 @@ const TodoList = () => {
 
   // Function to add a new todo
   const addTodo = async () => {
-    const response = await fetch("https://task-management-app-beige-pi.vercel.app/todo/todos", {
+    const response = await fetch("https://task-management-server-1jug.onrender.com/todo/todos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const TodoList = () => {
   const toggleTodoState = async (id, currentState) => {
     const newState = currentState === "done" ? "doing" : "done";
     const response = await fetch(
-      `https://task-management-app-beige-pi.vercel.app/todo/todos/${id}/${newState}`,
+      `https://task-management-server-1jug.onrender.com/todo/todos/${id}/${newState}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -74,7 +74,7 @@ const TodoList = () => {
   // Function to delete a todo
   const deleteTodo = async (id) => {
     try {
-      const response = await fetch(`https://task-management-app-beige-pi.vercel.app/todo/todos/${id}`, {
+      const response = await fetch(`https://task-management-server-1jug.onrender.com/todo/todos/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -94,7 +94,7 @@ const TodoList = () => {
   // Function to save changes to a todo
   const saveTodo = async (id) => {
     try {
-      const response = await fetch(`https://task-management-app-beige-pi.vercel.app/todo/todos/${id}`, {
+      const response = await fetch(`https://task-management-server-1jug.onrender.com/todo/todos/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
