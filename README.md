@@ -50,33 +50,33 @@ Make sure you have the following software installed on your machine:
 
 1. Clone the repository:
 
-    `git clone https://github.com/yourusername/your-task-app.git`
+`git clone https://github.com/yourusername/your-task-app.git`
 
-    `cd your-task-app`
+`cd your-task-app`
 
 2. Install server dependencies and start the server:
 
-    `cd server`
+`cd server`
 
-    `npm install`
+`npm install`
 
-    `npm start`
+`npm start`
 
 3. Install client dependencies and start the client:
 
-    `cd client`
+`cd client`
 
-    `npm install`
+`npm install`
 
-    `npm run dev`
+`npm run dev`
 
 4. Create a MongoDB database and configure the connection string in server/db/dbConnect.js.
 
 5. Create a .env file in the server directory with your MongoDB Database URL as:
 
-    `MONGO_URI = your_db_url`
+`MONGO_URI = your_db_url`
 
-    `PORT = your_port`
+`PORT = your_port`
 
 6. Your application should now be running. Access it at `http://localhost:5173`
 
